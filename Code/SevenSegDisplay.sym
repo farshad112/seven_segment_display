@@ -41,10 +41,10 @@ ROM Allocation:
 0136  StrtolGO
 
 Project Directory:
-    G:\MicroControllerProjects\Code\
+    G:\MicroControllerProjects\seven_segment_display\Code\
 
 Project Files:
-    SevenSegDisplay.c                                       [05-??????.-17 05.52  CRC=E80E5A3A]
+    SevenSegDisplay.c                                       [05-??????.-17 08.54  CRC=E47FD964]
     SevenSegDisplay.h                                       [27-??.-17 09.48  CRC=00000000]
     C:\Program Files (x86)\PICC\Devices\18F452.h            [08-??????.-15 15.15  CRC=FF951615]
     C:\Program Files (x86)\PICC\Drivers\math.h              [16-????.-15 10.40  CRC=6A8358B0]
@@ -54,7 +54,7 @@ Project Files:
     C:\Program Files (x86)\PICC\Drivers\ctype.h             [03-????.-08 14.55  CRC=2D1F019F]
     C:\Program Files (x86)\PICC\Drivers\stdio.h             [31-?????-07 14.24  CRC=4E4534F4]
 
-Source signature=71BF6046
+Source signature=6E30DF70
 Program memory checksum=0000
 Program memory CRC=0000
 Hex file CRC=6BC1

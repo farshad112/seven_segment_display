@@ -13,7 +13,7 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  136    54   8  SevenSegDisplay.c
+  156    54   8  SevenSegDisplay.c
     5     0   0  SevenSegDisplay.h
   720     0   0  C:\Program Files (x86)\PICC\Devices\18F452.h
  2227   257  38  C:\Program Files (x86)\PICC\Drivers\math.h
@@ -23,7 +23,7 @@ Lines Stmts  %   Files
    28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
    37     0   0  C:\Program Files (x86)\PICC\Drivers\stdio.h
 ----- -----
- 4971   670 Total
+ 4991   670 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -35,14 +35,14 @@ Page ROM  %  RAM    Vol Diff  Functions:
 Program metrics:
     Functions               2
     Statements              670
-    Comments                960
+    Comments                962
     Volume (V)              1983
     Difficulty (D)          9.1
     Effort to implement (E) 18081
     Time to implement (T)   17 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   12
-    Maintainability (MI)    68
+    Maintainability (MI)    67
 
  Segment     Used  Free
 -----------  ----  ----

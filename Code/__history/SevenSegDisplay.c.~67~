@@ -7,8 +7,8 @@
 
 // define the type of 7 segment used
 #define COMMON_CATHOD_SEG
-#ifndef COMMON_CATHOD_SEG
-    #define COMMON_ANNODE_SEG
+ifndef COMMON_CATHOD_SEG
+#define COMMON_ANNODE_SEG
 #endif
 
 // pin dirction defines
