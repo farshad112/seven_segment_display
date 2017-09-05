@@ -1,0 +1,82 @@
+[PROJECT]
+Target=SevenSegDisplay.hex
+Processor_Text=PIC18F452
+CCSVerions=5.049
+Compiler=PCH
+CCSVersion=5.049
+[Target Data]
+FileList=SevenSegDisplay.c
+[Directories]
+Include=
+[G:\MicroControllerProjects\Code\SevenSegDisplay]
+Type=4
+[mru-list]
+1=SevenSegDisplay.c
+
+[ProjectLog]
+Days=6
+D1=27-08-2017
+D1_L=7
+D1_L1=[35286]Project Opened.
+D1_L2=[35302]Started Editing.
+D1_L3=[35901]Stopped Editing.
+D1_L4=[37314]Started Editing.
+D1_L5=[41987]Stopped Editing.
+D1_L6=[51600]Started Editing.
+D1_L7=[51992]Stopped Editing.
+TotalEdit=150
+TotalDebug=0
+D2=29-08-2017
+D2_E=80
+D2_D=0
+D2_L=1
+D2_L1=[83683]Project Closed.
+D3=01-09-2017
+D3_L=8
+D3_L1=[29187]Project Opened.
+D3_L2=[29208]Started Editing.
+D3_L3=[29570]Stopped Editing.
+D3_L4=[29577]Started Editing.
+D3_L5=[30523]Stopped Editing.
+D3_L6=[31687]Started Editing.
+D3_L7=[32332]Stopped Editing.
+D3_E=18
+D3_D=0
+D3_L8=[64353]Project Closed.
+D4=03-09-2017
+D4_L=3
+D4_L1=[75519]Project Opened.
+D4_L2=[75538]Started Editing.
+D4_L3=[75839]Stopped Editing.
+D5=04-09-2017
+D5_L=6
+D5_L1=[35671]Project Opened.
+D5_L2=[36236]Started Editing.
+D5_L3=[37872]Stopped Editing.
+D5_L4=[39711]Started Editing.
+D5_L5=[40241]Stopped Editing.
+D5_E=27
+D5_D=0
+D5_L6=[41341]Project Closed.
+D6=05-09-2017
+D6_L=5
+D6_L1=[19641]Project Opened.
+D6_L2=[19678]Started Editing.
+D6_L3=[21475]Stopped Editing.
+D6_E=25
+D6_D=0
+D6_L4=[28021]Project Closed.
+D6_L5=[28124]Project Opened.
+
+[Opened Files]
+1=SevenSegDisplay.c
+t1=1
+Count=1
+[SevenSegDisplay.c]
+Type=4
+
+[defines]
+buildcount=27
+[Units]
+Count=1
+1=SevenSegDisplay (main)

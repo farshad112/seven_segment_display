@@ -1,0 +1,27 @@
+#include <SevenSegDisplay.h>
+
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+void main()
+{
+    set_tris_a(0x00);
+    set_tris_b(0x00);
+    set_tris_c(0x00);
+    set_tris_d(0x00);
+    
+    while(TRUE)
+    {
+        // set all port C pins to 1
+        output_c(0xFF);
+        // select display segment
+        output_bit(PIN_C1, 0);
+        // select segments
+        output_b(0x80);
+        delay_ms(1000);
+       
+    }
+
+}

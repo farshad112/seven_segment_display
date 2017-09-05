@@ -1,0 +1,135 @@
+#include <SevenSegDisplay.h>
+
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+// pin dirction defines
+#define ALL_OUT 0x00
+#define ALL_IN  0xff
+
+// ports defines for 7 segment selection
+#define SEG_SEL_PORT  output_c    // select port c as 7 segment selector
+#define SEG_SEL_BIT_1  PIN_C0
+#define SEG_SEL_BIT_2  PIN_C1
+#define SEG_SEL_BIT_3  PIN_C2
+#define SEG_SEL_BIT_4  PIN_C3
+
+// ports define for 7 segment drive
+#define SEG_DRIVE_PORT output_b     // select port b as 7 segment driver
+
+// delay between segment selection 
+#define SEG_SEL_DELAY_MS    10
+
+    
+// 7 Segment type and related logic level selection defines
+#define COMMON_CATHOD_SEG
+#ifdef COMMON_CATHOD_SEG
+    #define SEG_ENABLE_LOGIC 0
+    #define SEG_DRIVE_LOGIC  1
+#elif COMMON_ANNODE_SEG
+    #define SEG_ENABLE_LOGIC 1
+    #define SEG_DRIVE_LOGIC  0
+#endif
+
+// 7 segment selection reset val
+#ifdef COMMON_CATHOD_SEG
+    #define SEG_SEL_RST_VAL     0xff
+#elif COMMON_ANNODE_SEG
+    #define SEG_SEL_RST_VAL     0x00
+#endif
+
+// function prototype defines
+char decimal_to_bcd(char decimal_val);
+char seven_seg_decoder(char value, char with_dp);
+
+void main()
+{
+    // local variables
+    char decoded_value;
+    // port configurations
+    set_tris_a(ALL_OUT);
+    set_tris_b(ALL_OUT);
+    set_tris_c(ALL_OUT);
+    set_tris_d(ALL_OUT);
+    
+    while(TRUE)
+    {
+        // set all port C pins to 1
+        SEG_SEL_PORT(SEG_SEL_RST_VAL);
+        // select display segment
+        output_bit(SEG_SEL_BIT_4, 0);
+        // display value in segment
+        decoded_value = seven_seg_decoder(0, 0);
+        SEG_DRIVE_PORT(decoded_value);
+        delay_ms(SEG_SEL_DELAY_MS);
+        // set all port C pins to 1
+        SEG_SEL_PORT(SEG_SEL_RST_VAL);
+        // select display segment
+        output_bit(SEG_SEL_BIT_3, SEG_ENABLE_LOGIC);
+        // display value in segment
+        decoded_value = seven_seg_decoder(3, 0);
+        SEG_DRIVE_PORT(decoded_value);
+        delay_ms(SEG_SEL_DELAY_MS);
+        // set all port C pins to 1
+        SEG_SEL_PORT(SEG_SEL_RST_VAL);
+        // select display segment
+        output_bit(SEG_SEL_BIT_2, SEG_ENABLE_LOGIC);
+        // display value in segment
+        decoded_value = seven_seg_decoder(2, 1);
+        SEG_DRIVE_PORT(decoded_value);
+        delay_ms(SEG_SEL_DELAY_MS);
+        // set all port C pins to 1
+        SEG_SEL_PORT(SEG_SEL_RST_VAL);
+        // select display segment
+        output_bit(SEG_SEL_BIT_1, SEG_ENABLE_LOGIC);
+        // display value in segment
+        decoded_value = seven_seg_decoder(1, 0);
+        SEG_DRIVE_PORT(decoded_value);
+        delay_ms(SEG_SEL_DELAY_MS);
+    }
+
+}
+
+char decimal_to_bcd(char decimal_val){
+    char bcd_val;
+    bcd_val = (decimal_val /10) * 16 + (decimal_val %10);
+    return bcd_val;
+}
+
+char seven_seg_decoder(char value, char with_dp){
+    char decoded_val=0;
+    if(with_dp)
+        decoded_val = decoded_val | 0x80;
+    switch (value) {
+        case 0: decoded_val = decoded_val | 0x3F; 
+                break;
+        case 1: decoded_val = decoded_val | 0x06;
+                break;
+        case 2: decoded_val = decoded_val | 0x5B;
+                break;
+        case 3: decoded_val = decoded_val | 0x4F;
+                break;
+        case 4: decoded_val = decoded_val | 0x66;
+                break;
+        case 5: decoded_val = decoded_val | 0x6D;
+                break;
+        case 6: decoded_val = decoded_val | 0x7D;
+                break;
+        case 7: decoded_val = decoded_val | 0x07;
+                break;
+        case 8: decoded_val = decoded_val | 0x7F;
+                break;
+        case 9: decoded_val = decoded_val | 0x67;
+                break;
+        default:decoded_val = decoded_val | 0x3F; 
+                break;        
+    }
+    
+    #ifdef COMMON_CATHOD_SEG
+        return decoded_val;
+    #elif COMMON_ANNODE_SEG
+        return ~decoded_val;
+    #endif
+}

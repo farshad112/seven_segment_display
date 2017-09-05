@@ -1,0 +1,11 @@
+ÀÄSevenSegDisplay
+   ÀÄMAIN  0/158  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄseven_seg_decoder  0/120  Ram=3
+      ÃÄ@delay_ms1  0/38  Ram=1
+      ÃÄseven_seg_decoder  0/120  Ram=3
+      ÃÄ@delay_ms1  0/38  Ram=1
+      ÃÄseven_seg_decoder  0/120  Ram=3
+      ÃÄ@delay_ms1  0/38  Ram=1
+      ÃÄseven_seg_decoder  0/120  Ram=3
+      ÀÄ@delay_ms1  0/38  Ram=1

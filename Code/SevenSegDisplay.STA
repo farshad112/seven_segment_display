@@ -1,0 +1,53 @@
+
+ROM used:   320/32768 (1%)
+            320/32768 (1%) including unused fragments
+
+            0.1 Average locations per line
+            0.5 Average locations per statement
+
+RAM used:   11/1536 (1%) at main() level
+            30/1536 (2%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  136    54   8  SevenSegDisplay.c
+    5     0   0  SevenSegDisplay.h
+  720     0   0  C:\Program Files (x86)\PICC\Devices\18F452.h
+ 2227   257  38  C:\Program Files (x86)\PICC\Drivers\math.h
+ 1351   359  54  C:\Program Files (x86)\PICC\Drivers\stdlib.h
+   32     0   0  C:\Program Files (x86)\PICC\Drivers\stddef.h
+  435     0   0  C:\Program Files (x86)\PICC\Drivers\string.h
+   28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
+   37     0   0  C:\Program Files (x86)\PICC\Drivers\stdio.h
+----- -----
+ 4971   670 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     38   6    1             @delay_ms1
+0    158  25    1    793  2.9  MAIN
+0    120  19    3    907  6.4  seven_seg_decoder
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              670
+    Comments                960
+    Volume (V)              1983
+    Difficulty (D)          9.1
+    Effort to implement (E) 18081
+    Time to implement (T)   17 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   12
+    Maintainability (MI)    68
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   316  32448  
+
+
+
